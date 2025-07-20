@@ -399,6 +399,14 @@ st.sidebar.markdown(
 
 uploaded_file = st.sidebar.file_uploader("Upload a Word Document (DOCX)", type=["docx"])
 
+with open("./Data/Apple Con Call Transcript.docx", "rb") as file:
+    st.sidebar.download_button(
+        label="⬇️ Download Sample Transcript",
+        data=file,
+        file_name="sample_transcript.docx",
+        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    )
+
 st.sidebar.markdown(
     f"<p style='color: grey;'>Please refresh the page before uploading a new Word document to ensure that any cached data from the previously uploaded document is cleared.</p>",
     unsafe_allow_html=True,
