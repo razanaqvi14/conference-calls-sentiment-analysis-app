@@ -10,7 +10,9 @@ import torch.nn.functional as F
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 from transformers import BertTokenizer, BertForSequenceClassification
 import spacy
+import os
 
+os.environ["STREAMLIT_FILE_WATCHER_TYPE"] = "none"
 
 st.set_page_config(
     layout="wide",
