@@ -10,7 +10,14 @@ import torch.nn.functional as F
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 from transformers import BertTokenizer, BertForSequenceClassification
 import spacy
+import asyncio
 import os
+
+try:
+    loop = asyncio.get_running_loop()
+except RuntimeError:
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
 
 os.environ["STREAMLIT_FILE_WATCHER_TYPE"] = "none"
 
